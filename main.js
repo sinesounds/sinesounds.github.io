@@ -6,3 +6,12 @@ tl.to(".steps", {
   repeat: -1,
   ease: "none"
 });
+
+function play() {
+  var audio = new Audio('music/Ambient.mp3');
+  audio.play();
+}
+
+window.addEventListener("click", () => {
+   play()
+});
