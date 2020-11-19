@@ -8,7 +8,7 @@ tl.to(".steps", {
 });
 
 function play() {
-  var audio = new Audio('music/Ambient.mp3');
+  var audio = new Audio('music/ambience_1.mp3');
   audio.play();
 }
 
