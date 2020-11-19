@@ -1,183 +1,52 @@
 body {
+  background: url(https://images.unsplash.com/photo-1526500141527-9e9b0ae48227?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background: #141419;
-  color: white;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  max-height: 800px;
-  max-width: 1280px;
-  min-height: 600px;
-  min-width: 1000px;
+audio {
+  display: none;
 }
 
-.title {
-  font-family: "Lexend Deca", sans-serif;
+p {
   position: absolute;
   bottom: 0;
-  left: calc(50% - 120px);
-  width: 300px;
-  margin-bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(238, 238, 238, 0.6);
+  font-size: 20px;
 }
 
-.steps {
-  width: 500px;
-  height: 1500px;
+button {
+  font-size: 16px;
+  color: #eee;
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  padding: 15px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background: rgba(115, 67, 167, 0.8);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
 }
 
-.step {
-  width: 450px;
-  height: 70px;
-  border-top: 2px solid grey;
-  position: relative;
+button.fade:hover {
+  opacity: 0.8;
 }
 
-.window {
-  position: absolute;
-  border-radius: 20px;
-  height: 500px;
-  width: 500px;
-  overflow: hidden;
-  box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.51),
-    -6px -6px 16px 0 rgba(255, 255, 255, 0.43);
-}
-
-.e1,
-.e2,
-.i1,
-.i2,
-.t1,
-.t2 {
-  display: inline-block;
-}
-
-.e1 {
-  animation: jumpUpRight 4s infinite;
-}
-
-.e2 {
-  animation: jumpDownLeft 4s infinite;
-}
-
-.i1 {
-  animation: dropDown 4s infinite;
-}
-
-.i2 {
-  animation: dropBounce 4s infinite;
-}
-
-.t1 {
-  transform-origin: bottom center;
-  animation: leanRight 4s infinite;
-}
-
-.t2 {
-  transform-origin: bottom center;
-  animation: leanLeft 4s infinite;
-}
-
-@keyframes jumpUpRight {
-  20% {
-    transform: translateY(5%) scaleY(0.9);
-  }
-  40% {
-    transform: translateY(-300%) translateX(100%) rotate(90deg) scaleY(1.2);
-  }
-  50% {
-    transform: translateY(-160%) translateX(120%) rotate(180deg) scaleY(1);
-  }
-  70% {
-    transform: translateY(-170%) translateX(280%) rotate(360deg) scaleY(1);
-  }
-  80%,
-  100% {
-    transform: translateY(0) translateX(300%) scaleY(1);
-  }
-}
-
-@keyframes jumpDownLeft {
-  20% {
-    transform: translateY(5%) scaleY(0.9);
-  }
-  30% {
-    transform: translateY(170%) scaleY(1.2);
-  }
-  40% {
-    transform: translateY(180%) scaleY(0.9);
-  }
-  50% {
-    transform: translateY(200%) translateX(-120%) rotate(-180deg) scaleY(1);
-  }
-  70% {
-    transform: translateY(170%) translateX(-280%) rotate(-360deg) scaleY(1);
-  }
-  75% {
-    transform: translateY(175%) translateX(-280%) rotate(-360deg) scaleY(0.9);
-  }
-  80%,
-  100% {
-    transform: translateY(0) translateX(-300%) scaleY(1);
-  }
-}
-
-@keyframes dropDown {
-  100% {
-    transform: translateY(720%) rotate(-2160deg);
-  }
-}
-
-@keyframes leanRight {
-  40% {
-    transform: rotate(40deg);
-  }
-  80%,
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes leanLeft {
-  40% {
-    transform: rotate(-45deg);
-  }
-  80%,
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes dropBounce {
-  10% {
-    transform: translateY(70%) rotate(180deg);
-  }
-  45% {
-    transform: translateY(715%) rotate(180deg) scaleY(1);
-  }
-  50% {
-    transform: translateY(725%) rotate(180deg) scaleY(0.8);
-  }
-  70% {
-    transform: translateY(660%) rotate(0deg) scaleY(1);
-  }
-  95%,
-  100% {
-    transform: translateY(720%) rotate(0deg);
-  }
+.fade {
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
 }
