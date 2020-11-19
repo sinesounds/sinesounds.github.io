@@ -1,1 +1,8 @@
-// https://dribbble.com/shots/3871464-Day-41-42-Moon-Festival
+const tl = gsap.timeline();
+
+tl.to(".steps", {
+  y: "-950px",
+  duration: 20,
+  repeat: -1,
+  ease: "none"
+});
