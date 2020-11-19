@@ -1,17 +1,18 @@
-const tl = gsap.timeline();
+const button = document.querySelector("#button");
+const icon = document.querySelector("#button > i");
+const audio = document.querySelector("audio");
 
-tl.to(".steps", {
-  y: "-950px",
-  duration: 20,
-  repeat: -1,
-  ease: "none"
-});
-
-function play() {
-  var audio = new Audio('music/ambience_1.mp3');
-  audio.play();
-}
-
-window.addEventListener("click", () => {
-   play()
+button.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.volume = 0.2;
+    audio.play();
+    icon.classList.remove('fa-volume-up');
+    icon.classList.add('fa-volume-mute');
+    
+  } else {
+    audio.pause();
+    icon.classList.remove('fa-volume-mute');
+    icon.classList.add('fa-volume-up');
+  }
+  button.classList.add("fade");
 });
